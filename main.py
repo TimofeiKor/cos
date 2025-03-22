@@ -4,6 +4,7 @@ import os
 def clear():
     os.system('cls')
 
+
 def question():
     clear()
     answ11 = input("input a math char: ")
@@ -11,6 +12,10 @@ def question():
         plus()
     elif answ11 == "-":
         minus()
+    elif answ11 == "*":
+        multiply()
+    elif answ11 == "/":
+        divide()
 
 def plus():
     clear()
@@ -24,6 +29,20 @@ def minus():
     x = int(input("input num1: "))
     y = int(input("input num2: "))
     res = x - y
+    print("Result: ", res)
+
+def multiply():
+    clear()
+    x = int(input("input num1: "))
+    y = int(input("input num2: "))
+    res = x * y
+    print("Result: ", res)
+
+def divide():
+    clear()
+    x = int(input("input num1: "))
+    y = int(input("input num2: "))
+    res = x / y
     print("Result: ", res)
 
 
@@ -54,7 +73,7 @@ def menu():
     calc_t = "calc"
     note_t = "note"
     
-    print("COS. alpha 0.0.0.4.1 (build 60)")
+    print("COS. alpha 0.0.0.4.5 (build 83)")
     print("======== MENU ========")
     print(calc_t)
     print(note_t)
