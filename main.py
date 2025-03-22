@@ -1,8 +1,34 @@
 import os
-import apps.calc
+
+
+def clear():
+    os.system('cls')
+
+def question():
+    clear()
+    answ11 = input("input a math char: ")
+    if answ11 == "+":
+        plus()
+    elif answ11 == "-":
+        minus()
+
+def plus():
+    clear()
+    x = int(input("input num1: "))
+    y = int(input("input num2: "))
+    res = x + y
+    print("Result: ", res)
+
+def minus():
+    clear()
+    x = int(input("input num1: "))
+    y = int(input("input num2: "))
+    res = x - y
+    print("Result: ", res)
+
 
 def note():
-    os.system('cls')
+    clear()
     filename = "notes.txt"
 
     content = ""
@@ -24,18 +50,18 @@ def note():
 
 
 def menu():
-    os.system('cls')
-    calc = "calc"
+    clear()
+    calc_t = "calc"
     note_t = "note"
     
-    print("COS. alpha 0.0.0.4 (build 57)")
+    print("COS. alpha 0.0.0.4.1 (build 60)")
     print("======== MENU ========")
-    print(calc)
+    print(calc_t)
     print(note_t)
     print("======================")
     answ = input("input a program: ")
-    if answ == calc:
-        apps.calc.plus()
+    if answ == calc_t:
+        question()
         answ = int(input("Input '0' to close program... "))
         if answ == 0:
             menu()
