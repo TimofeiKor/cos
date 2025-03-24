@@ -1,14 +1,24 @@
 import os
+import datetime
 
 calc_t = "calc"
 note_t = "note"
 cmdcore = "core"
+timecmd = "time"
+
+def time():
+    clear()
+    now = datetime.datetime.now()
+    print(now)
+    answ = int(input("Input '0' to close program... "))
+    if answ == 0:
+        menu()
 
 def info():
-    print("COS. alpha 0.0.0.5.3 (build 107)")
+    print("COS. alpha 0.0.0.5.3/1 (build 107/5)")
 
 def info_core():
-    print("COS Core. alpha 0.0.0.1.2 (build 23)")
+    print("COS Core. alpha 0.0.0.1.2/1 (build 24/2)\nMade by: @TimofeiKor (github.com/TimofeiKor)")
 
 def clear():
     os.system('cls')
@@ -17,18 +27,14 @@ def core():
     clear()
     info_core()
     cmd = input("cos/core: ")
-    if cmd == "info":
-        info_core()
-        core()
-    elif cmd == "clear":
-        clear()
-        core()
-    elif cmd == "0":
+    if cmd == "0":
         menu()
     elif cmd == calc_t:
         question()
     elif cmd == note_t:
         note()
+    elif cmd == timecmd:
+        time()
 
 
 
@@ -118,6 +124,7 @@ def menu():
     print(calc_t)
     print(note_t)
     print(cmdcore)
+    print(timecmd)
     print("======================")
     answ = input("input a program: ")
     if answ == calc_t:
@@ -126,6 +133,8 @@ def menu():
         note()
     elif answ == cmdcore:
         core()
+    elif answ == timecmd:
+        time()
 
 
 menu()
