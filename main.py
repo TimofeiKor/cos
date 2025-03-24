@@ -26,7 +26,7 @@ def clear():
 def core():
     clear()
     info_core()
-    cmd = input("cos/core: ")
+    cmd = input("cos/core/> ")
     if cmd == "0":
         menu()
     elif cmd == calc_t:
