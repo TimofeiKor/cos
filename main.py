@@ -1,10 +1,12 @@
 import os
 import datetime
+import random
 
 calc_t = "calc"
 note_t = "note"
 cmdcore = "core"
 timecmd = "time"
+randncmd = "rndnms"
 
 def time():
     clear()
@@ -14,11 +16,28 @@ def time():
     if answ == 0:
         menu()
 
+def randNum():
+    clear()
+    minR = int(input("input min num: "))
+    maxR = int(input("input max num: "))
+    randN = random.randint(minR, maxR)
+    answer = int(input("input your number: "))
+    while answer != randN:
+        answer = int(input("input your number: "))
+        if answer == randN:
+            print("Right answer!")
+            answ = int(input("Input '0' to close program... "))
+            if answ == 0:
+                menu()
+            elif answer != randN:
+                answer = int(input("input your number: "))
+
+
 def info():
-    print("COS. alpha 0.0.0.5.3/1 (build 107/5)")
+    print("COS. alpha 0.0.0.5.4 (build 113)")
 
 def info_core():
-    print("COS Core. alpha 0.0.0.1.2/1 (build 24/2)\nMade by: @TimofeiKor (github.com/TimofeiKor)")
+    print("COS Core. alpha 0.0.0.1.3 (build 30)\nMade by: @TimofeiKor (github.com/TimofeiKor)")
 
 def clear():
     os.system('cls')
@@ -35,6 +54,8 @@ def core():
         note()
     elif cmd == timecmd:
         time()
+    elif cmd == randncmd:
+        randNum()
 
 
 
@@ -118,13 +139,13 @@ def note():
 
 def menu():
     clear()
-    
     info()
     print("======== MENU ========")
     print(calc_t)
     print(note_t)
     print(cmdcore)
     print(timecmd)
+    print(randncmd)
     print("======================")
     answ = input("input a program: ")
     if answ == calc_t:
@@ -135,6 +156,8 @@ def menu():
         core()
     elif answ == timecmd:
         time()
+    elif answ == randncmd:
+        randNum()
 
 
 menu()
